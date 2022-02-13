@@ -19,6 +19,35 @@ require("../controller/controllerlistpatient.php");
 </head>
 
 <body>
+    <!-- navabar-------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./home.php">Hospital Gallagher</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/addpatient.php">Ajouter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/listpatient.php">Lister / Modifier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/programlist.php">Programmer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="#">Voir</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-search-heart"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
     <h1 class="text-center mb-5 pt-2">Liste des patients</h1>
     <div class="container">
         <table class="table table-dark table-striped">
@@ -30,6 +59,7 @@ require("../controller/controllerlistpatient.php");
                     <th class="text-info" scope="col">Nom</th>
                     <th class="text-info" scope="col">Prénom</th>
                     <th class="text-info" scope="col">Détails</th>
+                    <th class="text-info" scope="col">Programmer</th>
                     <th class="text-info" scope="col">Supprimer</th>
                 </tr>
             </thead>
@@ -47,14 +77,16 @@ require("../controller/controllerlistpatient.php");
                             <form action="profilpatient.php" method="POST">
                                 <input name="id" type="hidden" value="<?= $patient["id"] ?>">
                                 <input name="idpatient" type="submit" value="Plus d'infos" class="btn btn-primary btn-sm"></input>
-                            </form>
 
+                            </form>
+                        </td>
+                        <td>
+                            <a type="button" href="../view/programlist.php" class="btn btn-primary" <?= $patient["id"] ?>>
+                                <i class="bi bi-calendar4-event"></i></a>
                         </td>
 
-
-
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal<?= $patient["id"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -71,11 +103,11 @@ require("../controller/controllerlistpatient.php");
                                 </div>
                             </div>
                         </div>
+
                         <td>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Supprimer
-                            </button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $patient["id"] ?>">
+                                <i class="bi bi-trash"></i> </button>
                         </td>
                     </tr>
                 <?php } ?>

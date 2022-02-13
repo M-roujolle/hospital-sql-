@@ -86,6 +86,11 @@ if (!empty($_POST)) {
 
     if (empty($arrayError)) {
         $insert = new Patient;
+        $nom = htmlspecialchars(trim($_POST["nom"]));
+        $prenom = htmlspecialchars(trim($_POST["prenom"]));
+        $datedenaissance = htmlspecialchars(trim($_POST["datedenaissance"]));
+        $telephone = htmlspecialchars(trim($_POST["telephone"]));
+        $mail = htmlspecialchars(trim($_POST["mail"]));
         $insert->InsertPatient($_POST["nom"], $_POST["prenom"], $_POST["datedenaissance"], $_POST["telephone"], $_POST["mail"],);
         $confirmation = "";
     }

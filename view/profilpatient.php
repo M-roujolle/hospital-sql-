@@ -18,23 +18,53 @@ require("../controller/controllerprofil.php");
 </head>
 
 <body>
-    <h1 class="text-center mb-5 pt-2">Profil des patients</h1>
-    <div class="container">
-        <div class="card " style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Nom : <?= $patientSolo["lastname"] ?> </li>
-                <li class="list-group-item">Prénom : <?= $patientSolo["firstname"] ?></li>
-                <li class="list-group-item">Date de naissance : <?= $patientSolo["birthdate"] ?></li>
-                <li class="list-group-item">Numéro de téléphone : <?= $patientSolo["phone"] ?></li>
-                <li class="list-group-item">Mail : <?= $patientSolo["mail"] ?></li>
-                <!-- Button trigger modal -->
-                <a class="btn btn-primary" href="modifpatient.php?id=<?= $patientSolo["id"] ?>">
+    <!-- navabar-------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./home.php">Hospital Gallagher</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/addpatient.php">Ajouter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/listpatient.php">Lister / Modifier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/programlist.php">Programmer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="#">Voir</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-search-heart"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <h1 class="text-center mb-5 pt-2">Profil du patient <?= $patientSolo["lastname"] ?> <?= $patientSolo["firstname"] ?></h1>
+
+    <div class="container d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <i class="bi bi-person-square text-center" style="font-size: 100px"></i>
+            <div class="card-body">
+                <h5 class="card-title text-center">Patient N° <?= $patientSolo["id"] ?> </h5>
+                <p class="card-text">Nom : <?= $patientSolo["lastname"] ?></p>
+                <p class="card-text">Prénom : <?= $patientSolo["firstname"] ?></p>
+                <p class="card-text">Date de naissance : <?= $patientSolo["birthdate"] ?></p>
+                <p class="card-text">Téléphone : <?= $patientSolo["phone"] ?></p>
+                <p class="card-text">Mail : <?= $patientSolo["mail"] ?></p>
+                <a class="btn btn-primary col-12" href="modifpatient.php?id=<?= $patientSolo["id"] ?>">
                     Modifier
                 </a>
-            </ul>
+            </div>
         </div>
     </div>
-
 
     <a class="btn btn-danger mt-2 mb-5 ms-2" href="../view/listpatient.php"><i class="bi bi-arrow-return-left"></i> Retour</a>
 

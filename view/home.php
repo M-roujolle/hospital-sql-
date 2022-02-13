@@ -15,27 +15,35 @@
 </head>
 
 <body>
-    <div class="principalepict">
-        <!-- navabar-------------------------------------------------------------- -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Hospital Gallagher</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><i class="bi bi-search-heart"></i></button>
-                    </form>
-                </div>
+
+
+    <!-- navabar-------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.php">Hospital Gallagher</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/addpatient.php">Ajouter / </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/listpatient.php">Lister-Modifier / </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/programlist.php">Programmer </a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-search-heart"></i></button>
+                </form>
             </div>
-        </nav>
+        </div>
+    </nav>
+    <div class="principalepict">
     </div>
 
     <!-- navabr -------------------------------------------------------------->
@@ -44,8 +52,8 @@
     <div class=" d-flex justify-content-center">
         <div class="card w-75 mt-5 text-center">
             <div class="card-body">
-                <h5 class="card-title">Ajouter un patient</h5>
-                <p class="card-text">Hospital Gallagher vous accompagne dans la connaissance de l'historique de vos patients en créant des fiches patients correspondantes, comprenant les données personnelles du patient et des informations sur les rendez-vous passés et à venir. Vous pouvez créer une fiche patient, mais également la supprimer</p>
+                <h5 class="card-title">Ajouter un ou plusieurs patient</h5>
+                <p class="card-text">Hospital Gallagher vous accompagne dans la connaissance de l'historique de vos patients en créant des fiches patients correspondantes, comprenant les données personnelles du patient.</p>
                 <a href="../view/addpatient.php" class="btn btn-primary col-3">Ajouter</a>
             </div>
         </div>
@@ -54,8 +62,8 @@
     <div class=" d-flex justify-content-center">
         <div class="card w-75 mt-5 text-center">
             <div class="card-body">
-                <h5 class="card-title">Liste des patient</h5>
-                <p class="card-text">Les médecins généralistes peuvent demander directement dans leur espace sécurisé amelipro la liste de leurs patients concernés et dont ils sont le médecin traitant. Elle se demande dans l'espace sécurisé amelipro / rubrique « Patientèle médecin traitant » / Onglet « Vaccination Covid »</p>
+                <h5 class="card-title">Lister ou modifier un patient</h5>
+                <p class="card-text">Hospital Gallagher vous accompagne dans la modification de l'historique de vos patients.</p>
                 <a href="../view/listpatient.php" class="btn btn-primary col-3">Voir</a>
             </div>
         </div>
@@ -65,8 +73,8 @@
         <div class="card w-75 mt-5 text-center">
             <div class="card-body">
                 <h5 class="card-title">Programmer un rendez vous</h5>
-                <p class="card-text">Hospital Gallagher vous accompagne dans la connaissance de l'historique de vos patients en créant des fiches patients correspondantes, comprenant les données personnelles du patient et des informations sur les rendez-vous passés et à venir. Vous pouvez créer une fiche patient, mais également la supprimer</p>
-                <a href="../view/addpatient.php" class="btn btn-primary col-3">Programmer</a>
+                <p class="card-text">Hospital Gallagher vous accompagne dans la programmation des rendez vous patient.</p>
+                <a href="../view/programlist.php" class="btn btn-primary col-3">Programmer</a>
             </div>
         </div>
     </div>
@@ -75,7 +83,7 @@
         <div class="card w-75 mt-5 text-center">
             <div class="card-body">
                 <h5 class="card-title">Voir les rendez-vous</h5>
-                <p class="card-text">Hospital Gallagher vous accompagne dans la connaissance de l'historique de vos patients en créant des fiches patients correspondantes, comprenant les données personnelles du patient et des informations sur les rendez-vous passés et à venir. Vous pouvez créer une fiche patient, mais également la supprimer</p>
+                <p class="card-text">Hospital Gallagher vous propose de lister et de modifier vos rendez vous.</p>
                 <a href="../view/addpatient.php" class="btn btn-primary col-3">Voir</a>
             </div>
         </div>
