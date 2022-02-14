@@ -8,7 +8,7 @@ $patientObj = new Patient;
 
 $getOneuser = $patientObj->GetOnePatient($_GET["id"]);
 
-var_dump($_POST);
+// var_dump($_POST);
 
 if (empty($_POST["date"]) && empty($_POST["time"])) {
     $arrayError["empty"] = "Veuillez remplir les champs";

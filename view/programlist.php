@@ -6,6 +6,39 @@ require("../controller/controllerprogram.php");
 
 <!DOCTYPE html>
 <html lang="fr">
+<style>
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 2px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 3px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #45a049;
+        color: white;
+        padding: 10px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    div {
+        border-radius: 10px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -33,16 +66,16 @@ require("../controller/controllerprogram.php");
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="../view/addpatient.php">Ajouter</a>
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/addpatient.php">Ajouter /</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="../view/listpatient.php">Lister / Modifier</a>
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/listpatient.php">Lister - Modifier /</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="../view/programlist.php">Programmer</a>
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/programlist.php">Programmer /</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="#">Voir</a>
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/seeappointment.php">Voir les rdv</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -56,26 +89,22 @@ require("../controller/controllerprogram.php");
 
     <div class="d-flex justify-content-center">
         <div class="card" style="width: 18rem;">
-            <div class="card-body">
+            <div class="card-body d-flex justify-content-center">
 
                 <form action="" method="POST">
-                    <select name="idpatient" id="selectpatient">
-                        <option class="text-center" value="">-- Patient --</option>
+                    <select class="mb-3" name="idpatient" id="selectpatient">
+                        <option class="text-center" value="">-- Choix du patient --</option>
 
                         <?php foreach ($patients as $patient) { ?>
                             <option value="<?= $patient["id"] ?>"><?= $patient["lastname"] ?> <?= $patient["firstname"] ?></option>
                         <?php } ?>
                     </select>
-                    <input name="date" type="date"><br>
-                    <input name="time" type="time"><br>
-
+                    <div>
+                        <input class="mb-3 col-12" name="date" type="date"><br>
+                        <input class="mb-3 col-12" name="time" type="time"><br>
+                    </div>
                     <input value="Enregistrer" name="recordBtn" type="submit" class="btn btn-success col-12">
-
-
                 </form>
-
-
-
             </div>
         </div>
     </div>

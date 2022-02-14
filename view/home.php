@@ -33,7 +33,10 @@
                         <a class="nav-link active text-primary" aria-current="page" href="../view/listpatient.php">Lister-Modifier / </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="../view/programlist.php">Programmer </a>
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/programlist.php">Programmer / </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/seeappointment.php">Voir les rdv </a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -84,7 +87,7 @@
             <div class="card-body">
                 <h5 class="card-title">Voir les rendez-vous</h5>
                 <p class="card-text">Hospital Gallagher vous propose de lister et de modifier vos rendez vous.</p>
-                <a href="../view/addpatient.php" class="btn btn-primary col-3">Voir</a>
+                <a href="../view/seeappointment.php" class="btn btn-primary col-3">Voir</a>
             </div>
         </div>
     </div>

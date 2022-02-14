@@ -28,16 +28,16 @@ require("../controller/controllerprofil.php");
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="../view/addpatient.php">Ajouter</a>
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/addpatient.php">Ajouter /</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="../view/listpatient.php">Lister / Modifier</a>
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/listpatient.php">Lister - Modifier /</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="../view/programlist.php">Programmer</a>
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/programlist.php">Programmer /</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-primary" aria-current="page" href="#">Voir</a>
+                        <a class="nav-link active text-primary" aria-current="page" href="../view/seeappointment.php">Voir les rdv</a>
                     </li>
                 </ul>
                 <form class="d-flex">

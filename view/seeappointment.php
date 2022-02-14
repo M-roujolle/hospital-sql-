@@ -1,7 +1,8 @@
 <?php
-require("../controller/controllerlistpatient.php");
-// var_dump($_POST);
+require '../controller/controllerseeappointmnent.php';
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -48,45 +49,29 @@ require("../controller/controllerlistpatient.php");
             </div>
         </div>
     </nav>
-    <h1 class="text-center mb-5 pt-2">Liste des patients</h1>
+
+
+    <h1 class="text-center mb-5 pt-2">Liste des rendez-vous</h1>
     <div class="container">
         <table class="table table-dark table-striped">
             <thead>
-
-
                 <tr>
-                    <th class="text-info" scope="col">#</th>
+                    <th class="text-info" scope="col">Id</th>
                     <th class="text-info" scope="col">Nom</th>
                     <th class="text-info" scope="col">Prénom</th>
-                    <th class="text-info" scope="col">Détails</th>
-                    <th class="text-info" scope="col">Programmer</th>
+                    <th class="text-info" scope="col">Date et heure de rdv</th>
                     <th class="text-info" scope="col">Supprimer</th>
                 </tr>
             </thead>
-
-
             <tbody>
-                <?php foreach ($patients as $patient) { ?>
+                <?php foreach ($appointments as $rdv) { ?>
                     <tr>
-                        <th class="text-warning" scope="row"><?= $patient["id"] ?></th>
-                        <td><?= $patient["lastname"] ?></td>
-                        <td><?= $patient["firstname"] ?></td>
-                        <td>
-
-                            <!-- methode post -->
-                            <form action="profilpatient.php" method="POST">
-                                <input name="id" type="hidden" value="<?= $patient["id"] ?>">
-                                <input name="idpatient" type="submit" value="Plus d'infos" class="btn btn-primary btn-sm"></input>
-
-                            </form>
-                        </td>
-                        <td>
-                            <a type="button" href="../view/programlist.php" class="btn btn-primary" <?= $patient["id"] ?>>
-                                <i class="bi bi-calendar4-event"></i></a>
-                        </td>
-
+                        <td><?= $rdv["idrdv"] ?></td>
+                        <td><?= $rdv["lastname"] ?></td>
+                        <td><?= $rdv["firstname"] ?></td>
+                        <td><?= $rdv["dateHour"] ?></td>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal<?= $patient["id"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal<?= $rdv["idrdv"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -97,8 +82,15 @@ require("../controller/controllerlistpatient.php");
                                         Etes vous certain de vouloir supprimer ce patient ?
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="http://php.net/HospitalProject/view/listpatient.php?id=<?= $patient["id"] ?>" class="btn btn-danger btn-sm">Supprimer</a>
-                                        <a href="listpatient.php" class="btn btn-primary btn-sm">Retour</a>
+
+                                        <!-- il faut faire un form en POST pour recupérer l'id -->
+                                        <form action="" method="POST">
+                                            <!-- faire un input caché pour recup la valeur -->
+                                            <input type="hidden" value="<?= $rdv["idrdv"] ?>" name="idrdv">
+                                            <!-- on créer un bouton pour confirmer la suppression -->
+                                            <button type="submit" name="idsupp" class="btn btn-danger">Supprimer</button>
+                                        </form>
+                                        <a href="seeapointment.php" class="btn btn-primary btn-sm">Retour</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +98,7 @@ require("../controller/controllerlistpatient.php");
 
                         <td>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $patient["id"] ?>">
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $rdv["idrdv"] ?>">
                                 <i class="bi bi-trash"></i> </button>
                         </td>
                     </tr>
@@ -114,7 +106,7 @@ require("../controller/controllerlistpatient.php");
             </tbody>
         </table>
     </div>
-    <a class="btn btn-danger mt-2 mb-5 ms-2" href="../view/home.php"><i class="bi bi-arrow-return-left"></i> Retour</a>
+    <a class="btn btn-danger mt-2 mb-5 ms-2" href="../view/programlist.php"><i class="bi bi-arrow-return-left"></i> Retour</a>
 </body>
 
 </html>
